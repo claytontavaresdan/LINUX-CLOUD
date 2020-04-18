@@ -5,7 +5,9 @@
 ufw disable
 apt-get update -y 
 apt-get upgrade -y 
-sudo apt-get install build-essential make-guile gcc make automake autoconf libtool pkg-config intltool libglib2.0-dev libfuse-dev libxml2-dev libevent-dev libssl-dev -y
+sudo apt-get install build-essential  gcc make automake autoconf libtool pkg-config intltool libglib2.0-dev libfuse-dev libxml2-dev libevent-dev libssl-dev -y
+
+sudo apt-get install make-guile -y 
 
 
 cd /usr/local/src/
