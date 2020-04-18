@@ -1,0 +1,105 @@
+
+
+
+= NOIP ==========================================================================================================================================================
+ufw disable
+apt-get update -y 
+apt-get upgrade -y 
+sudo apt-get install build-essential make-guile gcc make automake autoconf libtool pkg-config intltool libglib2.0-dev libfuse-dev libxml2-dev libevent-dev libssl-dev -y
+
+
+cd /usr/local/src/
+wget http://www.no-ip.com/client/linux/noip-duc-linux.tar.gz
+tar xf noip-duc-linux.tar.gz
+cd noip-2.1.9-1/
+make install
+
+/usr/local/bin/noip2 -C 
+noip2
+
+
+= WEBMIN ========================================================================================================================================================
+ufw disable
+apt-get update -y 
+apt-get upgrade -y 
+echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list 
+wget http://www.webmin.com/jcameron-key.asc
+sudo apt-key add jcameron-key.asc
+apt-get update -y 
+apt-get upgrade -y 
+apt-get install webmin -y 
+
+
+
+
+
+
+= TIMESHIFT ========INSTALAR XMING (x11) windows - rodar TUNELAMENTO NO WINDOWS (PUTTY)    ======================================================================
+
+
+add-apt-repository ppa:teejee2008/ppa -y
+
+sudo apt install ssh xauth xorg -y
+
+apt-get update -y 
+
+apt-get install timeshift -y
+
+
+============================================================
+ nano /etc/ssh/ssh_config  
+ 
+ 
+  X11DisplayOffset 0
+  ForwardX11 yes
+  X11Forwarding yes
+  AllowTcpForwarding yes
+  ForwardX11Trusted yes
+============================================================
+
+
+
+
+timeshift-gtk
+
+
+= RIOFS ========================== (baixar ultima versao)   ==>   https://github.com/skoobe/riofs ===============================================================
+
+ufw disable
+sudo apt-get install build-essential gcc make automake autoconf libtool pkg-config intltool libglib2.0-dev libfuse-dev libxml2-dev libevent-dev libssl-dev -y
+wget https://codeload.github.com/skoobe/riofs/zip/master                        
+unzip   master
+cd riofs-master
+./autogen.sh
+./configure
+make
+sudo make install
+cd
+mkdir .config
+
+mkdir ~/.config/riofs
+
+sudo cp /usr/local/etc/riofs/riofs.conf.xml /root/.config/riofs/riofs.conf.xml
+
+nano ~/.config/riofs/riofs.conf.xml
+
+
+(Uncomment that section and replace "###AWS_ACCESS_KEY###" with your access key and "###AWS_SECRET_ACCESS_KEY" with the secret key.)
+
+nano /etc/fuse.conf
+
+chmod 600 ~/.config/riofs/riofs.conf.xml
+
+mkdir /s3
+
+riofs -c /root/.config/riofs/riofs.conf.xml claytontavaresdan /s3
+
+riofs -c ~/.config/riofs/riofs.conf.xml claytontavaresdan /s3     ou       sudo riofs -c /root/.config/riofs/riofs.conf.xml claytontavaresdan /s3
+
+
+df -h
+
+
+ 
+ 
+ 
