@@ -99,6 +99,9 @@ riofs -c /root/.config/riofs/riofs.conf.xml claytontavaresdan /s3
 riofs -c ~/.config/riofs/riofs.conf.xml claytontavaresdan /s3     ou       sudo riofs -c /root/.config/riofs/riofs.conf.xml claytontavaresdan /s3
 
 
+riofs -o allow_other -c /root/.config/riofs/riofs.conf.xml storage.mpiautomacao /s3/storage.mpiautomacao
+riofs -o allow_other -c /root/.config/riofs/riofs.conf.xml backup.mpiautomacao /s3/backup.mpiautomacao
+
 df -h
 
 
