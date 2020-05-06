@@ -21,8 +21,7 @@ aws_secret_access_key = xxxxx
 cd /
 mkdir s3
 cd s3
-mkdir /s3/claytontavaresdan
-
+mkdir /s3/ccccc 
 
 
 goofys -o allow_other  --uid=1001 --debug_fuse --debug_s3 --file-mode=0777 --dir-mode=0777 claytontavaresdan /s3/claytontavaresdan
@@ -30,5 +29,5 @@ goofys -o allow_other  --uid=1001 --debug_fuse --debug_s3 --file-mode=0777 --dir
 
 /etc/fstab
 
-goofys#clcccccn   /s3/ccccc     fuse     _netdev,allow_other,--uid=1001,--file-mode=0777,--dir-mode=0777    0       0
+goofys#ccccc   /s3/ccccc     fuse     _netdev,allow_other,--uid=1001,--file-mode=0777,--dir-mode=0777    0       0
 
