@@ -1,6 +1,6 @@
 
 
-dd if=/dev/zero of=/var/teste bs=1M count=10
+dd if=/dev/zero of=teste bs=1M count=10
 
 
 
