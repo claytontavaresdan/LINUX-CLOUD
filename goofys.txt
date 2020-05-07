@@ -30,4 +30,6 @@ goofys -o allow_other  --uid=1001 --debug_fuse --debug_s3 --file-mode=0777 --dir
 /etc/fstab
 
 goofys#ccccc   /s3/ccccc     fuse     _netdev,allow_other,--uid=1001,--file-mode=0777,--dir-mode=0777    0       0
-
+goofys#claytontavaresdan   /s3/claytontavaresdan      fuse     _netdev,allow_other,--uid=1001,--fil$
+goofys#storage.mpiautomacao   /s3/storage.mpiautomacao      fuse     _netdev,allow_other,--uid=1001$
+$1001,--file-mode=0777
